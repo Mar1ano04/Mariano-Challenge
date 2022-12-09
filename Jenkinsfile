@@ -29,6 +29,10 @@ pipeline{
                 sh 'docker login -u mariano04 -p dckr_pat_35EKsV8hUI9PPINaC2JuazKxVh0'
                 sh 'docker image push mariano04/spring-webapp:latest'
             }
+        stage("call-staging"){
+            steps{
+                build job: 'Staging-pipeline'
+            }
         }
     }
 }
