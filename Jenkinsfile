@@ -13,5 +13,10 @@ pipeline{
                 sh 'mvn test'
             }
         }
+        stage("callqa"){
+            steps{
+                build job: 'qa-pipeline'
+            }
+        }
     }
 }
